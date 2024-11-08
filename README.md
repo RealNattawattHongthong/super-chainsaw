@@ -1,82 +1,65 @@
-# super-chainsaw
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/9113740/201498864-2a900c64-d88f-4ed4-b5cf-770bcb57e1f5.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/9113740/201498152-b171abb8-9225-487a-821c-6ff49ee48579.png">
+</picture>
 
-## History Dashboard for Detection UI
+<div align="center"><strong>Next.js 14 Admin Dashboard Starter Template With Shadcn-ui</strong></div>
+<div align="center">Built with the Next.js App Router</div>
+<br />
+<div align="center">
+<a href="https://next-shadcn-dashboard-starter.vercel.app">View Demo</a>
+<span>
+</div>
 
-The History Dashboard for Detection UI is a feature in the Next.js application that allows users to view and interact with the history of past detections. It includes the following components and features:
+## Overview
 
-### Components
+This is a starter template using the following stack:
 
-1. **HistoryDashboard.js**
-   - Main component displaying the list of past detections with timestamps, status, and pagination.
-   - Imports and uses `SearchBar`, `Pagination`, `DetectionDetails`, `Charts`, and `ExportButton` components.
-   - Manages state for detections, search filters, and pagination.
+- Framework - [Next.js 14](https://nextjs.org/13)
+- Language - [TypeScript](https://www.typescriptlang.org)
+- Styling - [Tailwind CSS](https://tailwindcss.com)
+- Components - [Shadcn-ui](https://ui.shadcn.com)
+- Schema Validations - [Zod](https://zod.dev)
+- State Management - [Zustand](https://zustand-demo.pmnd.rs)
+- Search params state manager - [Nuqs](https://nuqs.47ng.com/)
+- Auth - [Auth.js](https://authjs.dev/)
+- Tables - [Tanstack Tables](https://ui.shadcn.com/docs/components/data-table)
+- Forms - [React Hook Form](https://ui.shadcn.com/docs/components/form)
+- Linting - [ESLint](https://eslint.org)
+- Pre-commit Hooks - [Husky](https://typicode.github.io/husky/)
+- Formatting - [Prettier](https://prettier.io)
 
-2. **SearchBar.js**
-   - Component for the search bar to filter detections by date, keyword, detection status, and detection type.
-   - Supports advanced search functionality including keyword search, date range filtering, detection status filtering, detection type filtering, and sorting options.
+_If you are looking for a React admin dashboard starter, here is the [repo](https://github.com/Kiranism/react-shadcn-dashboard-starter)._
 
-3. **Pagination.js**
-   - Component for pagination to navigate through the history.
-   - Manages state for current page and total pages.
+## Pages
 
-4. **DetectionDetails.js**
-   - Component to display detailed information for each detection in a modal or separate page.
-   - Manages state for selected detection and modal visibility.
+| Pages                                                                                   | Specifications                                                                                                                      |
+| :-------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| [Signup](https://next-shadcn-dashboard-starter.vercel.app/)                             | Authentication with **NextAuth** supports Social logins and email logins (Enter dummy email for demo).                              |
+| [Dashboard](https://next-shadcn-dashboard-starter.vercel.app/dashboard)                 | Cards with recharts graphs for analytics.                                                                                           |
+| [Employee](https://next-shadcn-dashboard-starter.vercel.app/dashboard/employee)         | Tanstack tables with server side searching, filter, pagination by Nuqs which is a Type-safe search params state manager in nextjs). |
+| [Employee/new](https://next-shadcn-dashboard-starter.vercel.app/dashboard/employee/new) | A Employee Form with shadcn form (react-hook-form + zod).                                                                           |
+| [Product](https://next-shadcn-dashboard-starter.vercel.app/dashboard/product)           | Tanstack tables with server side searching, filter, pagination by Nuqs which is a Type-safe search params state manager in nextjs   |
+| [Product/new](https://next-shadcn-dashboard-starter.vercel.app/dashboard/product/new)   | A Product Form with shadcn form (react-hook-form + zod).                                                                            |
+| [Profile](https://next-shadcn-dashboard-starter.vercel.app/dashboard/profile)           | Mutistep dynamic forms using react-hook-form and zod for form validation.                                                           |
+| [Kanban Board](https://next-shadcn-dashboard-starter.vercel.app/dashboard/kanban)       | A Drag n Drop task management board with dnd-kit and zustand to persist state locally.                                              |
+| [Not Found](https://next-shadcn-dashboard-starter.vercel.app/dashboard/notfound)        | Not Found Page Added in the root level                                                                                              |
+| -                                                                                       | -                                                                                                                                   |
 
-5. **Charts.js**
-   - Component to display interactive charts and graphs to visualize detection trends over time.
-   - Uses a chart library like Chart.js or Recharts.
+## Getting Started
 
-6. **ExportButton.js**
-   - Component to enable users to export the history data to CSV or other formats.
-   - Adds functionality to export filtered and sorted data.
+Follow these steps to clone the repository and start the development server:
 
-### Features
+- `git clone https://github.com/Kiranism/next-shadcn-dashboard-starter.git`
+- `npm install`
+- Create a `.env.local` file by copying the example environment file:
+  `cp env.example.txt .env.local`
+- Add the required environment variables to the `.env.local` file.
+- `npm run dev`
 
-- **Display List of Detections**: Shows a list of past detections with timestamps and status.
-- **Search Bar**: Allows users to filter detections by date, keyword, detection status, and detection type.
-- **Pagination**: Provides pagination for easy navigation through the history.
-- **Detection Details**: Allows users to click on a detection to view more detailed information in a modal or separate page.
-- **Interactive Charts**: Adds interactive charts and graphs to visualize detection trends over time.
-- **Export Data**: Enables users to export the history data to CSV or other formats for further analysis.
+You should now be able to access the application at http://localhost:3000.
 
-### Usage
+> [!WARNING]  
+> After cloning or forking the repository, be cautious when pulling or syncing with the latest changes, as this may result in breaking conflicts.
 
-To use the History Dashboard for Detection UI, import and include the `HistoryDashboard` component in your Next.js application. The component will handle fetching and displaying the detection history, as well as providing search, pagination, and export functionality.
-
-```jsx
-import HistoryDashboard from '../components/HistoryDashboard/HistoryDashboard';
-
-const HomePage = () => {
-  return (
-    <div>
-      <h1>Detection History</h1>
-      <HistoryDashboard />
-    </div>
-  );
-};
-
-export default HomePage;
-```
-
-### Installation
-
-To install the necessary dependencies for the History Dashboard, run the following command:
-
-```bash
-npm install recharts
-```
-
-### Contributing
-
-If you would like to contribute to the development of the History Dashboard for Detection UI, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Make your changes and commit them with a descriptive message.
-4. Push your changes to your forked repository.
-5. Create a pull request to the main repository.
-
-### License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Cheers! 🥂
